@@ -18,10 +18,10 @@ export default class MovieService {
     try {
       let movieUrl = this._moviePopularUrl;
       if (search !== '') {
-        movieUrl += `search/movie?query=${search}&language=en-US&page=`;
+        movieUrl += `/search/movie?query=${search}&language=en-US&page=`;
       }
       if (search === '') {
-        movieUrl += 'movie/popular?language=en-US&page=';
+        movieUrl += '/movie/popular?language=en-US&page=';
       }
       const res = await fetch(movieUrl + pageNumber, this._options);
       if (!res.ok) {
